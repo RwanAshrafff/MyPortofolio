@@ -249,7 +249,14 @@ const AboutPage = () => {
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Review CV
               </button>
               </a>
-              <a href="#Portofolio" className="w-full lg:w-auto">
+              <a href="#Portofolio" className="w-full lg:w-auto" onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector('#Portofolio');
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth' });
+                }
+                window.location.hash = '#Portofolio';
+              }}>
               <button 
                 data-aos="fade-up"
                 data-aos-duration="1000"

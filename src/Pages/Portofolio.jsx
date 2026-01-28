@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -228,7 +228,8 @@ const techStacks = [
 
 export default function FullWidthTabs() {
   const theme = useTheme();
-  const [value, setValue] = useState(0);
+  const location = useLocation();
+  const [value, setValue] = React.useState(0);
   const [projects, setProjects] = useState([]);
   const [certificates, setCertificates] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -241,6 +242,13 @@ export default function FullWidthTabs() {
       once: false,
     });
   }, []);
+
+  // Handle hash-based tab switching
+  useEffect(() => {
+    if (location.hash === '#Portofolio' || location.hash.includes('projects')) {
+      setValue(1); // Switch to Projects tab
+    }
+  }, [location.hash]);
 
 
   useEffect(() => {
