@@ -5,10 +5,12 @@ export default {
 		extend: {
 			backdropBlur: {
 				sm: '4px',
-			  },
-			
-			
-		  },
+			},
+			screens: {
+				'xs': '475px',
+				'3xl': '1920px',
+			},
 		},
+	},
 	plugins: [],
 }

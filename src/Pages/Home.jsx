@@ -7,7 +7,7 @@ import 'aos/dist/aos.css'
 // Memoized Components
 const MainTitle = memo(() => (
   <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-    <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+    <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
       <span className="relative inline-block">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#6366f1] to-[#a855f7] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
@@ -149,19 +149,19 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] " id="Home">
+    <div className="min-h-screen bg-[#030014] overflow-hidden px-4 sm:px-[5%] lg:px-[10%] w-full max-w-[100vw]" id="Home">
       <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
-        <div className="container mx-auto  min-h-screen ">
-          <div className="flex flex-col lg:flex-row items-center justify-center h-screen md:justify-between gap-0 sm:gap-12 lg:gap-20">
+        <div className="container mx-auto min-h-screen max-w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen md:justify-between gap-6 sm:gap-12 lg:gap-20 py-8">
             {/* Left Column */}
-            <div className="w-full lg:w-1/2 space-y-6 sm:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-20"
+            <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6 md:space-y-8 text-left lg:text-left order-1 lg:order-1 lg:mt-20 px-2"
               data-aos="fade-right"
               data-aos-delay="200">
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 <MainTitle />
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
+                <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="800">
                   AI Engineer and Full Stack Developer passionate about AI-driven solutions, data platforms, and web development. Mentor & Teaching Assistant helping peers and turning research into practical products.
@@ -191,16 +191,16 @@ const Home = () => {
             </div>
 
             {/* Right Column - Coding GIF Only */}
-            <div className="w-full py-[10%] sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex flex-col items-center justify-center order-2 lg:order-2 mt-8 lg:mt-20"
+            <div className="w-full py-8 sm:py-0 lg:w-1/2 h-auto lg:h-[600px] xl:h-[750px] relative flex flex-col items-center justify-center order-2 lg:order-2 lg:mt-20 px-2"
               data-aos="fade-left"
               data-aos-delay="600">
               
               {/* Coding GIF */}
-              <div className="relative w-full max-w-lg h-64 lg:h-96 flex items-center justify-center" data-aos="fade-up" data-aos-delay="1600">
+              <div className="relative w-full max-w-xs sm:max-w-md lg:max-w-lg h-48 sm:h-64 lg:h-96 flex items-center justify-center" data-aos="fade-up" data-aos-delay="1600">
                 <img 
                   src="/Coding.gif" 
                   alt="Coding animation"
-                  className="w-auto h-full max-w-full object-cover rounded-2xl shadow-2xl"
+                  className="w-full h-full object-contain rounded-2xl shadow-2xl"
                 />
               </div>
             </div>
