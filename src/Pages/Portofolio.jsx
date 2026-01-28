@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 
-import { supabase } from "../supabase"; 
-
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
@@ -102,20 +100,131 @@ function a11yProps(index) {
   };
 }
 
-// techStacks tetap sama
+const projectsData = [
+  {
+    id: "hospital-management-system",
+    Title: "Hospital Management System (Django)",
+    Description: "Web app that centralizes patients, doctors, appointments, billing, and medical records to reduce paperwork and errors.",
+    Link: "https://github.com/RwanAshrafff/Hospital-Management-System",
+    Img: "/project-hospital-management.jpg",
+    Github: "https://github.com/RwanAshrafff/Hospital-Management-System",
+    TechStack: ["Django", "PostgreSQL", "Bootstrap", "REST"],
+    Features: [
+      "Role-based access for staff and doctors",
+      "Appointment scheduling and billing",
+      "Medical record tracking and audit trails"
+    ],
+  },
+  {
+    id: "time-management-system",
+    Title: "Time Management System (Java)",
+    Description: "Personal assistant that organizes daily tasks, prioritizes deadlines, and reduces procrastination through reminders and smart scheduling.",
+    Link: "https://github.com/RwanAshrafff/Time-Management-Java-Application",
+    Img: "/project-time-management.jpg",
+    Github: "https://github.com/RwanAshrafff/Time-Management-Java-Application",
+    TechStack: ["Java", "JavaFX", "MySQL", "OOP"],
+    Features: [
+      "Daily and weekly planner with prioritization",
+      "Reminders to cut down procrastination",
+      "Simple UI focused on clarity"
+    ],
+  },
+  {
+    id: "maze-generator-solver",
+    Title: "Maze Generator & Solver (Python)",
+    Description: "Generates complex mazes and solves them in real time using BFS, DFS, and A* to showcase algorithm efficiency.",
+    Link: "https://github.com/RwanAshrafff/Maze-Generator-and-solver-",
+    Img: "/project-maze-generator.jpg",
+    Github: "https://github.com/RwanAshrafff/Maze-Generator-and-solver-",
+    TechStack: ["Python", "BFS", "DFS", "A*"],
+    Features: [
+      "Multiple generation algorithms",
+      "Side-by-side pathfinding visualizer",
+      "Performance comparison across strategies"
+    ],
+  },
+  {
+    id: "sentiment-analysis",
+    Title: "Tweet Sentiment Classification (PySpark vs Python)",
+    Description: "ML project comparing sentiment classification models using PySpark (distributed) and scikit-learn (single-node) on real-world tweet datasets.",
+    Link: "https://github.com/RwanAshrafff/Sentiment_Analysis-",
+    Img: "/project-tweet-sentiment.jpg",
+    Github: "https://github.com/RwanAshrafff/Sentiment_Analysis-",
+    TechStack: ["PySpark", "Python", "scikit-learn", "Docker", "Machine Learning"],
+    Features: [
+      "Sentiment classification (positive, negative, neutral)",
+      "PySpark MLlib vs Python scikit-learn comparison",
+      "Multiple ML algorithms: Logistic Regression, Naive Bayes, SVM, Random Forest"
+    ],
+  },
+];
+
+const experienceData = [
+  {
+    id: "etisalat-internship",
+    Position: "Data Engineer Internship",
+    Company: "E& (Etisalat)",
+    Duration: "August 2025",
+    Description: "Worked as a data engineer focusing on data cleaning, processing, and extracting valuable insights from telecommunications data.",
+    Skills: ["Data Engineering", "Data Cleaning", "Data Analysis", "Insights Generation", "Problem Solving"],
+    Img: "/exp-etisalat.png"
+  },
+  {
+    id: "naid-internship",
+    Position: "Computer Vision Internship",
+    Company: "NAID (National Academy of Information Technology for Persons with Disabilities)",
+    Duration: "July - August 2025",
+    Description: "Worked on machine learning projects focused on computer vision and data analysis using advanced Python techniques.",
+    Skills: ["Machine Learning", "Data Analysis", "Python", "AI"],
+    Img: "/exp-naid.png"
+  },
+  {
+    id: "gdg-dotnet-mentor",
+    Position: ".NET Mentor",
+    Company: "GDG - Nile University",
+    Duration: "March 2025 - June 2025",
+    Description: "Mentored students in Software Engineering course, providing guidance and support throughout their .NET projects at Google Developer Groups club.",
+    Skills: [".NET", "Mentoring", "Software Engineering", "Project Guidance"],
+    Img: "/exp-gdg.png"
+  },
+  {
+    id: "python-ta",
+    Position: "Junior Python Teaching Assistant",
+    Company: "Nile University",
+    Duration: "September 2024 - March 2025",
+    Description: "Mentoring and assisting students in Python programming, providing guidance on code quality and best practices.",
+    Skills: ["Python", "Mentoring", "Teaching", "Code Review"],
+    Img: "/exp-nile-university.jpg"
+  },
+];
+
+const certificatesData = [
+  { id: "etisalat-internship", Img: "/cert-etisalat-internship.jpg" },
+  { id: "naid-computer-vision", Img: "/cert-naid-computer-vision.jpg" },
+  { id: "gdg-dotnet-mentor", Img: "/cert-gdg-dotnet-mentor.jpg" },
+  { id: "junior-ta-appreciation", Img: "/cert-junior-ta-appreciation.jpg" },
+  { id: "icpc-honorable-2023", Img: "/cert-icpc-honorable-2023.jpg" },
+  { id: "icpc-seventieth-2024", Img: "/cert-icpc-seventieth-2024.jpg" },
+  { id: "microsoft-fullstack", Img: "/cert-microsoft-fullstack.jpg" },
+  { id: "sprints-microsoft-summer", Img: "/cert-sprints-microsoft-summer.jpg" },
+  { id: "digitopia-2025", Img: "/cert-digitopia-2025.jpg" },
+  { id: "deans-honor-fall-2024", Img: "/cert-deans-honor-fall-2024.jpg" },
+  { id: "deans-honor-spring-2025", Img: "/cert-deans-honor-spring-2025.jpg" },
+];
+
 const techStacks = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", language: "Java" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", language: "Python" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", language: "C++" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", language: "C#" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", language: "Django" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg", language: ".NET" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", language: "Pandas" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", language: "Docker" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", language: "PostgreSQL" },
+  { icon: "/javascript.svg", language: "JavaScript" },
+  { icon: "/reactjs.svg", language: "React" },
+  { icon: "/tailwind.svg", language: "Tailwind" },
 ];
 
 export default function FullWidthTabs() {
@@ -135,47 +244,12 @@ export default function FullWidthTabs() {
   }, []);
 
 
-  const fetchData = useCallback(async () => {
-    try {
-      // Mengambil data dari Supabase secara paralel
-      const [projectsResponse, certificatesResponse] = await Promise.all([
-        supabase.from("projects").select("*").order('id', { ascending: true }),
-        supabase.from("certificates").select("*").order('id', { ascending: true }), 
-      ]);
-
-      // Error handling untuk setiap request
-      if (projectsResponse.error) throw projectsResponse.error;
-      if (certificatesResponse.error) throw certificatesResponse.error;
-
-      // Supabase mengembalikan data dalam properti 'data'
-      const projectData = projectsResponse.data || [];
-      const certificateData = certificatesResponse.data || [];
-
-      setProjects(projectData);
-      setCertificates(certificateData);
-
-      // Store in localStorage (fungsionalitas ini tetap dipertahankan)
-      localStorage.setItem("projects", JSON.stringify(projectData));
-      localStorage.setItem("certificates", JSON.stringify(certificateData));
-    } catch (error) {
-      console.error("Error fetching data from Supabase:", error.message);
-    }
-  }, []);
-
-
-
   useEffect(() => {
-    // Coba ambil dari localStorage dulu untuk laod lebih cepat
-    const cachedProjects = localStorage.getItem('projects');
-    const cachedCertificates = localStorage.getItem('certificates');
-
-    if (cachedProjects && cachedCertificates) {
-        setProjects(JSON.parse(cachedProjects));
-        setCertificates(JSON.parse(cachedCertificates));
-    }
-    
-    fetchData(); // Tetap panggil fetchData untuk sinkronisasi data terbaru
-  }, [fetchData]);
+    setProjects(projectsData);
+    setCertificates(certificatesData);
+    localStorage.setItem("projects", JSON.stringify(projectsData));
+    localStorage.setItem("certificates", JSON.stringify(certificatesData));
+  }, []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -189,8 +263,11 @@ export default function FullWidthTabs() {
     }
   }, []);
 
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
-  const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
+  const projectsToUse = projects.length > 0 ? projects : projectsData;
+  const certificatesToUse = certificates.length > 0 ? certificates : certificatesData;
+  
+  const displayedProjects = showAllProjects ? projectsToUse : projectsToUse.slice(0, initialItems);
+  const displayedCertificates = showAllCertificates ? certificatesToUse : certificatesToUse.slice(0, initialItems);
 
   // Sisa dari komponen (return statement) tidak ada perubahan
   return (
@@ -209,8 +286,7 @@ export default function FullWidthTabs() {
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through projects, certifications, and technical expertise. 
-          Each section represents a milestone in my continuous learning path.
+          AI and data-focused work from Nile University, internships, and mentoring—plus the certifications that shaped my path.
         </p>
       </div>
 
@@ -285,18 +361,23 @@ export default function FullWidthTabs() {
           >
             <Tab
               icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Projects"
+              label="Experience"
               {...a11yProps(0)}
+            />
+            <Tab
+              icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
+              label="Projects"
+              {...a11yProps(1)}
             />
             <Tab
               icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
               label="Certificates"
-              {...a11yProps(1)}
+              {...a11yProps(2)}
             />
             <Tab
               icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />}
               label="Tech Stack"
-              {...a11yProps(2)}
+              {...a11yProps(3)}
             />
           </Tabs>
         </AppBar>
@@ -307,6 +388,51 @@ export default function FullWidthTabs() {
           onChangeIndex={setValue}
         >
           <TabPanel value={value} index={0} dir={theme.direction}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              {experienceData.map((exp, index) => (
+                <div
+                  key={exp.id || index}
+                  data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                  data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                  className="relative group"
+                >
+                  <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-purple-500/20 p-6 h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                    
+                    <div className="relative z-10 space-y-4">
+                      <div>
+                        <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+                          {exp.Position}
+                        </h3>
+                        <p className="text-purple-400 font-medium text-sm md:text-base mt-1">{exp.Company}</p>
+                        <p className="text-gray-400 text-xs md:text-sm mt-1">{exp.Duration}</p>
+                      </div>
+                      
+                      <p className="text-gray-300/80 text-sm leading-relaxed">
+                        {exp.Description}
+                      </p>
+                      
+                      <div className="pt-2">
+                        <p className="text-gray-400 text-xs font-semibold mb-2">Skills:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.Skills.map((skill, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-block px-3 py-1 rounded-full text-xs bg-white/5 text-blue-300 border border-blue-500/20 hover:border-blue-500/50 transition-colors"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabPanel>
+
+          <TabPanel value={value} index={1} dir={theme.direction}>
             <div className="container mx-auto flex justify-center items-center overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {displayedProjects.map((project, index) => (
@@ -326,7 +452,7 @@ export default function FullWidthTabs() {
                 ))}
               </div>
             </div>
-            {projects.length > initialItems && (
+            {projectsToUse.length > initialItems && (
               <div className="mt-6 w-full flex justify-start">
                 <ToggleButton
                   onClick={() => toggleShowMore('projects')}
@@ -336,21 +462,19 @@ export default function FullWidthTabs() {
             )}
           </TabPanel>
 
-          <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
-                {displayedCertificates.map((certificate, index) => (
-                  <div
-                    key={certificate.id || index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <Certificate ImgSertif={certificate.Img} />
-                  </div>
-                ))}
-              </div>
+          <TabPanel value={value} index={2} dir={theme.direction}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+              {displayedCertificates.map((certificate, index) => (
+                <div
+                  key={certificate.id || index}
+                  data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                  data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                >
+                  <Certificate ImgSertif={certificate.Img} />
+                </div>
+              ))}
             </div>
-            {certificates.length > initialItems && (
+            {certificatesToUse.length > initialItems && (
               <div className="mt-6 w-full flex justify-start">
                 <ToggleButton
                   onClick={() => toggleShowMore('certificates')}
@@ -360,19 +484,17 @@ export default function FullWidthTabs() {
             )}
           </TabPanel>
 
-          <TabPanel value={value} index={2} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden pb-[5%]">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-8 gap-5">
-                {techStacks.map((stack, index) => (
-                  <div
-                    key={index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
-                  </div>
-                ))}
-              </div>
+          <TabPanel value={value} index={3} dir={theme.direction}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 w-full">
+              {techStacks.map((stack, index) => (
+                <div
+                  key={index}
+                  data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                  data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                >
+                  <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                </div>
+              ))}
             </div>
           </TabPanel>
         </SwipeableViews>
