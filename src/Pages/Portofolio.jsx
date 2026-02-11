@@ -143,6 +143,24 @@ const projectsData = [
     ],
   },
   {
+    id: "stem-charm",
+    Title: "STEMmy - Multimodal AI Tutoring System",
+    Description: "An intelligent tutoring system combining NLP, humor-aware responses, facial emotion recognition, speech-to-text, and sign language interpretation to enhance STEM education through adaptive and engaging learning experiences.",
+    Link: "https://github.com/RwanAshrafff/Stemmy.git",
+    Img: "/multimodal.png",
+    Logo: "/stemmy.jpg",
+    Github: "https://github.com/RwanAshrafff/Stemmy.git",
+    TechStack: ["Python", "React", "FastAPI", "BERT", "YOLO", "LLaMA", "Machine Learning", "Deep Learning"],
+    Features: [
+      "94.33% accuracy in humor detection using transformer-based classifier",
+      "83.42% semantic understanding with BERT for context-aware responses",
+      "YOLO-based facial expression recognition for emotion-aware tutoring",
+      "Enhanced RAG pipeline with topic classification reducing LLM hallucinations",
+      "Multimodal input: speech-to-text and sign language interpretation",
+      "80%+ accuracy in STEM subject classification with cosine-similarity retrieval"
+    ],
+  },
+  {
     id: "sentiment-analysis",
     Title: "Tweet Sentiment Classification (PySpark vs Python)",
     Description: "ML project comparing sentiment classification models using PySpark (distributed) and scikit-learn (single-node) on real-world tweet datasets.",
@@ -289,7 +307,7 @@ export default function FullWidthTabs() {
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Portfolio Showcase
+            Portofolio Showcase
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">

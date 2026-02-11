@@ -159,6 +159,18 @@ const ProjectDetails = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-16">
             <div className="space-y-6 md:space-y-10 animate-slideInLeft">
               <div className="space-y-4 md:space-y-6">
+                {project.Logo && (
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="relative group">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full opacity-75 group-hover:opacity-100 blur transition duration-300"></div>
+                      <img 
+                        src={project.Logo} 
+                        alt={`${project.Title} Logo`}
+                        className="relative w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-white/20 shadow-2xl"
+                      />
+                    </div>
+                  </div>
+                )}
                 <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
                   {project.Title}
                 </h1>
