@@ -33,19 +33,28 @@ const TechBadge = ({ tech }) => {
   );
 };
 
-const FeatureItem = ({ feature }) => {
+const FeatureGroup = ({ group }) => {
   return (
-    <li className="group flex items-start space-x-3 p-2.5 md:p-3.5 rounded-xl hover:bg-white/5 transition-all duration-300 border border-transparent hover:border-white/10">
-      <div className="relative mt-2">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
-        <div className="relative w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 group-hover:scale-125 transition-transform duration-300" />
+    <div className="group/fg relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300 p-4">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover/fg:opacity-100 transition-opacity duration-300" />
+      <div className="relative z-10">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl leading-none">{group.icon}</span>
+          <span className="text-sm font-semibold text-purple-300/90 uppercase tracking-wide">{group.label}</span>
+        </div>
+        <ul className="space-y-1.5">
+          {group.items.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex-shrink-0" />
+              <span className="text-sm text-gray-300/90 leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <span className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors">
-        {feature}
-      </span>
-    </li>
+    </div>
   );
 };
+
 
 const ProjectStats = ({ project }) => {
   const techStackCount = project?.TechStack?.length || 0;
@@ -201,6 +210,42 @@ const ProjectDetails = () => {
                   <Github className="relative w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
                   <span className="relative font-medium">Github</span>
                 </a>
+                {project.Link && project.Link !== project.Github && (
+                  <a
+                    href={project.Link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 hover:from-blue-600/20 hover:to-cyan-600/20 text-blue-300 rounded-xl transition-all duration-300 border border-blue-500/20 hover:border-blue-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                  >
+                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-blue-600/10 to-cyan-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="relative font-medium">Live Demo</span>
+                  </a>
+                )}
+                {project.Drive && (
+                  <a
+                    href={project.Drive}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-emerald-600/10 to-cyan-600/10 hover:from-emerald-600/20 hover:to-cyan-600/20 text-emerald-300 rounded-xl transition-all duration-300 border border-emerald-500/20 hover:border-emerald-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                  >
+                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-emerald-600/10 to-cyan-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="relative font-medium">VR Walkthrough</span>
+                  </a>
+                )}
+                {project.Space && (
+                  <a
+                    href={project.Space}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center space-x-1.5 md:space-x-2 px-4 md:px-8 py-2.5 md:py-4 bg-gradient-to-r from-amber-600/10 to-orange-600/10 hover:from-amber-600/20 hover:to-orange-600/20 text-amber-300 rounded-xl transition-all duration-300 border border-amber-500/20 hover:border-amber-500/40 backdrop-blur-xl overflow-hidden text-sm md:text-base"
+                  >
+                    <div className="absolute inset-0 translate-y-[100%] bg-gradient-to-r from-amber-600/10 to-orange-600/10 transition-transform duration-300 group-hover:translate-y-[0%]" />
+                    <ExternalLink className="relative w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-0.5 transition-transform" />
+                    <span className="relative font-medium">Admission Officer Space</span>
+                  </a>
+                )}
               </div>
 
               <div className="space-y-4 md:space-y-6">
@@ -233,18 +278,30 @@ const ProjectDetails = () => {
                 <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-300 rounded-2xl" />
               </div>
 
-              {/* Fitur Utama */}
-              <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-6 hover:border-white/20 transition-colors duration-300 group">
+              <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-5 hover:border-white/20 transition-colors duration-300 group">
                 <h3 className="text-xl font-semibold text-white/90 flex items-center gap-3">
                   <Star className="w-5 h-5 text-yellow-400 group-hover:rotate-[20deg] transition-transform duration-300" />
                   Key Features
                 </h3>
                 {project.Features.length > 0 ? (
-                  <ul className="list-none space-y-2">
-                    {project.Features.map((feature, index) => (
-                      <FeatureItem key={index} feature={feature} />
-                    ))}
-                  </ul>
+                  Array.isArray(project.Features[0]) || typeof project.Features[0] === "string" ? (
+                    // Legacy flat list fallback
+                    <ul className="list-none space-y-2">
+                      {project.Features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0" />
+                          <span className="text-sm text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    // New grouped card layout
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {project.Features.map((group, index) => (
+                        <FeatureGroup key={index} group={group} />
+                      ))}
+                    </div>
+                  )
                 ) : (
                   <p className="text-gray-400 opacity-50">No features added.</p>
                 )}

@@ -101,7 +101,96 @@ function a11yProps(index) {
 
 const projectsData = [
   {
+    id: "nuverse-virtual-campus",
+    category: "grad",
+    Title: "NUVerse - Intelligent AI-Driven Virtual Campus Exploration System",
+    Description: "NUVerse is a multi-platform virtual campus experience for Nile University designed to help first-year students choose the right major and feel more confident about university life.",
+    Link: "https://nuverse-three.vercel.app",
+    Drive: "https://drive.google.com/drive/folders/1wAtNN0z6fOAIXAYL6CzojywWc1Yb5wfb?usp=sharing",
+    Space: "https://huggingface.co/spaces/RwanAshraf/AdmissionOfficer/tree/main",
+    Img: "/nuverse.png",
+    Github: "https://github.com/RwanAshrafff/nuverse-web-portal",
+    TechStack: ["Next.js", "TypeScript", "AI", "Virtual Reality", "3D Simulation", "Hugging Face Spaces"],
+    Features: [
+      {
+        label: "Core Objective",
+        icon: "🎯",
+        items: [
+          "Help first-year students discover the right major and understand themselves better",
+        ],
+      },
+      {
+        label: "VR Experience",
+        icon: "🥽",
+        items: [
+          "Virtual circuits and chemistry lab simulations",
+          "Bilingual voice-to-voice AI professor in English and Arabic",
+        ],
+      },
+      {
+        label: "Web Platform",
+        icon: "🌐",
+        items: [
+          "360-degree university view",
+          "Bilingual chatbot acting as an admission officer for quick queries",
+          "RIASEC-inspired quiz to guide students toward the right major",
+        ],
+      },
+      {
+        label: "Deployment",
+        icon: "🚀",
+        items: [
+          "Website deployed on Azure and Vercel",
+          "AI experiences deployed on Hugging Face Spaces",
+        ],
+      },
+    ],
+  },
+  {
+    id: "forssa-learning-platform",
+    category: "software",
+    Title: "Forssa - Full-Stack Learning Platform",
+    Description: "A full-stack learning platform inspired by Udemy and Coursera, focused on making quality education accessible through free access, financial aid, role-based learning tools, and a personalized home feed.",
+    Link: "https://forssa-frontend-puce.vercel.app/",
+    Img: "/forssa.png",
+    Github: "https://github.com/SherifAhmedd/Forssa-Frontend",
+    TechStack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Vercel", "ASP.NET Core", "Azure"],
+    Features: [
+      {
+        label: "Access Control",
+        icon: "🔐",
+        items: [
+          "Student, instructor, and admin role-based access control",
+        ],
+      },
+      {
+        label: "Learning Tools",
+        icon: "📚",
+        items: [
+          "Course browsing, enrollment, financial aid requests, and PDF certificates",
+          "Personalized home feed with follow/unfollow activity updates",
+        ],
+      },
+      {
+        label: "Instructor Dashboard",
+        icon: "📊",
+        items: [
+          "Multi-step course creation wizard",
+          "Analytics dashboard for enrollment and revenue tracking",
+        ],
+      },
+      {
+        label: "Payments",
+        icon: "💳",
+        items: [
+          "Stripe checkout and webhook-based enrollment flow",
+        ],
+      },
+    ],
+  },
+  {
     id: "hospital-management-system",
+    category: "software",
     Title: "Hospital Management System (Django)",
     Description: "Web app that centralizes patients, doctors, appointments, billing, and medical records to reduce paperwork and errors.",
     Link: "https://github.com/RwanAshrafff/Hospital-Management-System",
@@ -109,13 +198,26 @@ const projectsData = [
     Github: "https://github.com/RwanAshrafff/Hospital-Management-System",
     TechStack: ["Django", "PostgreSQL", "Bootstrap", "REST"],
     Features: [
-      "Role-based access for staff and doctors",
-      "Appointment scheduling and billing",
-      "Medical record tracking and audit trails"
+      {
+        label: "Access & Security",
+        icon: "🔐",
+        items: ["Role-based access control for staff and doctors"],
+      },
+      {
+        label: "Operations",
+        icon: "🏥",
+        items: ["Appointment scheduling", "Billing and invoicing"],
+      },
+      {
+        label: "Records",
+        icon: "📋",
+        items: ["Medical record tracking", "Full audit trails for accountability"],
+      },
     ],
   },
   {
     id: "time-management-system",
+    category: "software",
     Title: "Time Management System (Java)",
     Description: "Personal assistant that organizes daily tasks, prioritizes deadlines, and reduces procrastination through reminders and smart scheduling.",
     Link: "https://github.com/RwanAshrafff/Time-Management-Java-Application",
@@ -123,13 +225,26 @@ const projectsData = [
     Github: "https://github.com/RwanAshrafff/Time-Management-Java-Application",
     TechStack: ["Java", "JavaFX", "MySQL", "OOP"],
     Features: [
-      "Daily and weekly planner with prioritization",
-      "Reminders to cut down procrastination",
-      "Simple UI focused on clarity"
+      {
+        label: "Planning",
+        icon: "📅",
+        items: ["Daily and weekly planner with task prioritization"],
+      },
+      {
+        label: "Productivity",
+        icon: "⏱️",
+        items: ["Smart reminders to reduce procrastination"],
+      },
+      {
+        label: "Design",
+        icon: "🎨",
+        items: ["Clean and minimal UI focused on clarity"],
+      },
     ],
   },
   {
     id: "maze-generator-solver",
+    category: "software",
     Title: "Maze Generator & Solver (Python)",
     Description: "Generates complex mazes and solves them in real time using BFS, DFS, and A* to showcase algorithm efficiency.",
     Link: "https://github.com/RwanAshrafff/Maze-Generator-and-solver-",
@@ -137,13 +252,26 @@ const projectsData = [
     Github: "https://github.com/RwanAshrafff/Maze-Generator-and-solver-",
     TechStack: ["Python", "BFS", "DFS", "A*"],
     Features: [
-      "Multiple generation algorithms",
-      "Side-by-side pathfinding visualizer",
-      "Performance comparison across strategies"
+      {
+        label: "Generation",
+        icon: "🔀",
+        items: ["Multiple maze generation algorithms"],
+      },
+      {
+        label: "Visualization",
+        icon: "🖼️",
+        items: ["Side-by-side real-time pathfinding visualizer"],
+      },
+      {
+        label: "Analysis",
+        icon: "📈",
+        items: ["Performance comparison across BFS, DFS, and A* strategies"],
+      },
     ],
   },
   {
     id: "stem-charm",
+    category: "ai",
     Title: "STEMmy - Multimodal AI Tutoring System",
     Description: "An intelligent tutoring system combining NLP, humor-aware responses, facial emotion recognition, speech-to-text, and sign language interpretation to enhance STEM education through adaptive and engaging learning experiences.",
     Link: "https://github.com/RwanAshrafff/Stemmy.git",
@@ -152,16 +280,42 @@ const projectsData = [
     Github: "https://github.com/RwanAshrafff/Stemmy.git",
     TechStack: ["Python", "React", "FastAPI", "BERT", "YOLO", "LLaMA", "Machine Learning", "Deep Learning"],
     Features: [
-      "94.33% accuracy in humor detection using transformer-based classifier",
-      "83.42% semantic understanding with BERT for context-aware responses",
-      "YOLO-based facial expression recognition for emotion-aware tutoring",
-      "Enhanced RAG pipeline with topic classification reducing LLM hallucinations",
-      "Multimodal input: speech-to-text and sign language interpretation",
-      "80%+ accuracy in STEM subject classification with cosine-similarity retrieval"
+      {
+        label: "NLP & Language",
+        icon: "🧠",
+        items: [
+          "94.33% accuracy in humor detection using transformer-based classifier",
+          "83.42% semantic understanding with BERT for context-aware responses",
+        ],
+      },
+      {
+        label: "Vision & Emotion",
+        icon: "👁️",
+        items: [
+          "YOLO-based facial expression recognition for emotion-aware tutoring",
+        ],
+      },
+      {
+        label: "RAG & Knowledge",
+        icon: "📡",
+        items: [
+          "Enhanced RAG pipeline with topic classification to reduce LLM hallucinations",
+          "80%+ accuracy in STEM subject classification with cosine-similarity retrieval",
+        ],
+      },
+      {
+        label: "Multimodal Input",
+        icon: "🎙️",
+        items: [
+          "Speech-to-text voice input",
+          "Sign language interpretation support",
+        ],
+      },
     ],
   },
   {
     id: "sentiment-analysis",
+    category: "ai",
     Title: "Tweet Sentiment Classification (PySpark vs Python)",
     Description: "ML project comparing sentiment classification models using PySpark (distributed) and scikit-learn (single-node) on real-world tweet datasets.",
     Link: "https://github.com/RwanAshrafff/Sentiment_Analysis-",
@@ -169,9 +323,21 @@ const projectsData = [
     Github: "https://github.com/RwanAshrafff/Sentiment_Analysis-",
     TechStack: ["PySpark", "Python", "scikit-learn", "Docker", "Machine Learning"],
     Features: [
-      "Sentiment classification (positive, negative, neutral)",
-      "PySpark MLlib vs Python scikit-learn comparison",
-      "Multiple ML algorithms: Logistic Regression, Naive Bayes, SVM, Random Forest"
+      {
+        label: "Classification",
+        icon: "🏷️",
+        items: ["Three-class sentiment detection: positive, negative, and neutral"],
+      },
+      {
+        label: "Framework Comparison",
+        icon: "⚖️",
+        items: ["Side-by-side benchmark of PySpark MLlib vs Python scikit-learn"],
+      },
+      {
+        label: "Algorithms",
+        icon: "🔬",
+        items: ["Logistic Regression", "Naive Bayes", "SVM", "Random Forest"],
+      },
     ],
   },
 ];
@@ -250,7 +416,6 @@ export default function FullWidthTabs() {
   const [value, setValue] = React.useState(0);
   const [projects, setProjects] = useState([]);
   const [certificates, setCertificates] = useState([]);
-  const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
@@ -281,18 +446,44 @@ export default function FullWidthTabs() {
   };
 
   const toggleShowMore = useCallback((type) => {
-    if (type === 'projects') {
-      setShowAllProjects(prev => !prev);
-    } else {
-      setShowAllCertificates(prev => !prev);
-    }
+    setShowAllCertificates(prev => !prev);
   }, []);
 
   const projectsToUse = projects.length > 0 ? projects : projectsData;
   const certificatesToUse = certificates.length > 0 ? certificates : certificatesData;
-  
-  const displayedProjects = showAllProjects ? projectsToUse : projectsToUse.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificatesToUse : certificatesToUse.slice(0, initialItems);
+  const projectSections = [
+    {
+      key: "grad",
+      title: "Grad Project",
+      description: "Capstone and final-year work bridging AI, VR, and real-world impact.",
+      icon: "🎓",
+      accent: "from-amber-500 to-orange-500",
+      glow: "rgba(251,191,36,0.15)",
+      border: "border-amber-500/30",
+      badge: "bg-amber-500/10 text-amber-300 border-amber-500/20",
+    },
+    {
+      key: "ai",
+      title: "AI Projects",
+      description: "Machine learning, NLP, and intelligent systems built to solve real problems.",
+      icon: "🤖",
+      accent: "from-violet-500 to-purple-600",
+      glow: "rgba(139,92,246,0.15)",
+      border: "border-violet-500/30",
+      badge: "bg-violet-500/10 text-violet-300 border-violet-500/20",
+    },
+    {
+      key: "software",
+      title: "Software Projects",
+      description: "Full-stack applications and engineering projects with clean architecture.",
+      icon: "💻",
+      accent: "from-cyan-500 to-blue-500",
+      glow: "rgba(6,182,212,0.15)",
+      border: "border-cyan-500/30",
+      badge: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
+    },
+  ];
 
   // Sisa dari komponen (return statement) tidak ada perubahan
   return (
@@ -419,7 +610,6 @@ export default function FullWidthTabs() {
                 >
                   <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-lg border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-purple-500/20 p-6 h-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-                    
                     <div className="relative z-10 space-y-4">
                       <div>
                         <h3 className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
@@ -428,11 +618,11 @@ export default function FullWidthTabs() {
                         <p className="text-purple-400 font-medium text-sm md:text-base mt-1">{exp.Company}</p>
                         <p className="text-gray-400 text-xs md:text-sm mt-1">{exp.Duration}</p>
                       </div>
-                      
+
                       <p className="text-gray-300/80 text-sm leading-relaxed">
                         {exp.Description}
                       </p>
-                      
+
                       <div className="pt-2">
                         <p className="text-gray-400 text-xs font-semibold mb-2">Skills:</p>
                         <div className="flex flex-wrap gap-2">
@@ -454,33 +644,74 @@ export default function FullWidthTabs() {
           </TabPanel>
 
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <div className="container mx-auto flex justify-center items-center overflow-hidden">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
-                {displayedProjects.map((project, index) => (
-                  <div
-                    key={project.id || index}
-                    data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
-                    data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
-                  >
-                    <CardProject
-                      Img={project.Img}
-                      Title={project.Title}
-                      Description={project.Description}
-                      Link={project.Link}
-                      id={project.id}
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="space-y-14 w-full">
+              {projectSections.map((section, sectionIndex) => {
+                const sectionProjects = projectsToUse.filter((project) => project.category === section.key);
+
+                if (sectionProjects.length === 0) return null;
+
+                return (
+                  <section key={section.key} className="space-y-6">
+                    {/* ── Section Header ── */}
+                    <div
+                      data-aos="fade-up"
+                      data-aos-duration="800"
+                      className="relative flex items-center gap-4"
+                    >
+                      {/* Glowing icon badge */}
+                      <div
+                        className={`relative flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center border ${section.border} bg-white/5 shadow-lg`}
+                        style={{ boxShadow: `0 0 20px ${section.glow}` }}
+                      >
+                        <span className="text-2xl leading-none select-none">{section.icon}</span>
+                      </div>
+
+                      {/* Title + description + count */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3
+                            className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${section.accent} bg-clip-text text-transparent leading-tight`}
+                          >
+                            {section.title}
+                          </h3>
+                          <span
+                            className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border ${section.badge}`}
+                          >
+                            {sectionProjects.length} {sectionProjects.length === 1 ? "project" : "projects"}
+                          </span>
+                        </div>
+                        <p className="text-sm text-slate-400 mt-0.5 leading-relaxed">{section.description}</p>
+                      </div>
+
+                      {/* Gradient rule */}
+                      <div className={`hidden sm:block flex-1 h-px bg-gradient-to-r ${section.accent} opacity-20`} />
+                    </div>
+
+                    {/* ── Cards grid ── */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+                      {sectionProjects.map((project, index) => (
+                        <div
+                          key={project.id || `${section.key}-${index}`}
+                          data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                          data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                        >
+                          <CardProject
+                            Img={project.Img}
+                            Title={project.Title}
+                            Description={project.Description}
+                            Link={project.Link}
+                            Github={project.Github}
+                            id={project.id}
+                            TechStack={project.TechStack}
+                            accentGradient={section.accent}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
-            {projectsToUse.length > initialItems && (
-              <div className="mt-6 w-full flex justify-start">
-                <ToggleButton
-                  onClick={() => toggleShowMore('projects')}
-                  isShowingMore={showAllProjects}
-                />
-              </div>
-            )}
           </TabPanel>
 
           <TabPanel value={value} index={2} dir={theme.direction}>
