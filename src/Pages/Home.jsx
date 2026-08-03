@@ -78,7 +78,7 @@ const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
 const WORDS = [
   "AI Engineer",
-  "Full Stack Developer",
+  "Backend-Focused Full Stack Developer",
   "Mentor & Junior Teaching Assistant"
 ];
 const TECH_STACK = ["SQL", "Python", "Java", "C#", "C++", "Django", ".NET", "Pandas", "Docker"];
@@ -177,7 +177,7 @@ const Home = () => {
                 <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="800">
-                  AI Engineer and Full Stack Developer passionate about AI-driven solutions, data platforms, and web development. Mentor & Teaching Assistant helping peers and turning research into practical products.
+                  Backend-Focused Full Stack Developer and AI Engineer passionate about AI-driven solutions and web development. Junior Teaching Assistant helping peers and turning research into practical products.
                 </p>
 
                 {/* Typing Effect */}

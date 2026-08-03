@@ -214,7 +214,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             Information Technology and Computer Science student at Nile University (Giza, Sheikh Zayed) with a 3.90 GPA. I focus on AI and data-driven solutions—ranging from big data telecom projects to web development and mentoring peers in .NET and Python. I enjoy turning research into reliable tools that people can use every day.
+             Information Technology and Computer Science student at Nile University (Giza, Sheikh Zayed) with a 3.90 GPA, three Dean's Honors, and a rank 1 graduation project result among more than 80 ITCS projects. I focus on backend-oriented AI and web development—ranging from telecom projects to mentoring peers in .NET and Python. I enjoy turning research into reliable tools that people can use every day.
             </p>
 
                {/* Quote Section */}

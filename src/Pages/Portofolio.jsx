@@ -150,7 +150,7 @@ const projectsData = [
     id: "forssa-learning-platform",
     category: "software",
     Title: "Forssa - Full-Stack Learning Platform",
-    Description: "A full-stack learning platform inspired by Udemy and Coursera, focused on making quality education accessible through free access, financial aid, role-based learning tools, and a personalized home feed.",
+    Description: "A full-stack learning platform inspired by Udemy and Coursera, powered by a .NET backend and focused on making quality education accessible through free access, financial aid, role-based learning tools, and a personalized home feed.",
     Link: "https://forssa-frontend-puce.vercel.app/",
     Img: "/forssa.png",
     Github: "https://github.com/SherifAhmedd/Forssa-Frontend",
@@ -185,6 +185,33 @@ const projectsData = [
         items: [
           "Stripe checkout and webhook-based enrollment flow",
         ],
+      },
+    ],
+  },
+  {
+    id: "bank-system",
+    category: "software",
+    Title: "Bank System",
+    Description: "A backend banking system built with .NET for account management, deposits, withdrawals, transfers, and transaction history using layered architecture.",
+    Link: "https://github.com/RwanAshrafff/Bank_System",
+    Img: "/banking.jpg",
+    Github: "https://github.com/RwanAshrafff/Bank_System",
+    TechStack: [".NET 9", "ASP.NET Core", "Entity Framework Core", "SQL Server", "xUnit"],
+    Features: [
+      {
+        label: "Banking Operations",
+        icon: "🏦",
+        items: ["Create accounts, deposit money, withdraw money, and transfer funds between accounts"],
+      },
+      {
+        label: "Architecture",
+        icon: "🧱",
+        items: ["Layered design across Domain, Application, Infrastructure, and API projects"],
+      },
+      {
+        label: "Data & Testing",
+        icon: "🧪",
+        items: ["SQL Server persistence with unit tests for core business logic"],
       },
     ],
   },
@@ -340,6 +367,60 @@ const projectsData = [
       },
     ],
   },
+  {
+    id: "ecommerce-recommendation-system",
+    category: "ai",
+    Title: "E-Commerce Product Recommendation System",
+    Description: "An end-to-end analytics and recommendation pipeline that combines data engineering, association rule mining, customer segmentation, and business intelligence.",
+    Link: "https://github.com/RwanAshrafff/ecommerce-recommendation-system",
+    Img: "/CustomerInsights.png",
+    Github: "https://github.com/RwanAshrafff/ecommerce-recommendation-system",
+    TechStack: ["Python", "SQL", "PostgreSQL", "Pandas", "scikit-learn", "Power BI", "Machine Learning"],
+    Features: [
+      {
+        label: "Data Pipeline",
+        icon: "📦",
+        items: ["Medallion architecture with Bronze, Silver, and Gold layers"],
+      },
+      {
+        label: "Recommendation Engine",
+        icon: "🛒",
+        items: ["FP-Growth association rule mining for cross-selling insights"],
+      },
+      {
+        label: "Customer Intelligence",
+        icon: "📊",
+        items: ["RFM-based segmentation and customer value prediction"],
+      },
+    ],
+  },
+  {
+    id: "arabic-sentiment-analysis",
+    category: "ai",
+    Title: "Arabic Sentiment Analysis",
+    Description: "Arabic NLP project focused on preprocessing, feature extraction, and sentiment classification using traditional machine learning and word embeddings.",
+    Link: "https://github.com/RwanAshrafff/Arabic-Sentiment-Analysis",
+    Img: "/arabic-sentiment-analysis.png",
+    Github: "https://github.com/RwanAshrafff/Arabic-Sentiment-Analysis",
+    TechStack: ["Python", "NLP", "NLTK", "Gensim", "scikit-learn", "TensorFlow", "Keras"],
+    Features: [
+      {
+        label: "Preprocessing",
+        icon: "🧹",
+        items: ["Arabic text cleaning, normalization, tokenization, and stopword removal"],
+      },
+      {
+        label: "Feature Extraction",
+        icon: "🧠",
+        items: ["BoW, TF-IDF, n-grams, AraVec, and FastText embeddings"],
+      },
+      {
+        label: "Models",
+        icon: "⚙️",
+        items: ["Logistic Regression, Arabert, Marbert, Camelbert, and Qarib"],
+      },
+    ],
+  },
 ];
 
 const experienceData = [
@@ -382,32 +463,35 @@ const experienceData = [
 ];
 
 const certificatesData = [
+  { id: "microsoft-fullstack", Img: "/cert-microsoft-fullstack.jpg" },
+  { id: "sprints-microsoft-summer", Img: "/cert-sprints-microsoft-summer.jpg" },
   { id: "etisalat-internship", Img: "/cert-etisalat-internship.jpg" },
   { id: "naid-computer-vision", Img: "/cert-naid-computer-vision.jpg" },
   { id: "gdg-dotnet-mentor", Img: "/cert-gdg-dotnet-mentor.jpg" },
   { id: "junior-ta-appreciation", Img: "/cert-junior-ta-appreciation.jpg" },
   { id: "icpc-honorable-2023", Img: "/cert-icpc-honorable-2023.jpg" },
   { id: "icpc-seventieth-2024", Img: "/cert-icpc-seventieth-2024.jpg" },
-  { id: "microsoft-fullstack", Img: "/cert-microsoft-fullstack.jpg" },
-  { id: "sprints-microsoft-summer", Img: "/cert-sprints-microsoft-summer.jpg" },
   { id: "digitopia-2025", Img: "/cert-digitopia-2025.jpg" },
   { id: "deans-honor-fall-2024", Img: "/cert-deans-honor-fall-2024.jpg" },
   { id: "deans-honor-spring-2025", Img: "/cert-deans-honor-spring-2025.jpg" },
+  { id: "deans-honor-fall-2025", Img: "/deans-honour3.jpeg" },
 ];
 
 const techStacks = [
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", language: "Java" },
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", language: "Python" },
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", language: "C++" },
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", language: "C#" },
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", language: "Django" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg", language: ".NET" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", language: "Django" },
+  { icon: "/reactjs.svg", language: "React" },
+  { icon: "/tailwind.svg", language: "Tailwind" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", language: "C#" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", language: "C++" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", language: "Python" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", language: "Java" },
+  { icon: "/javascript.svg", language: "JavaScript" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", language: "Pandas" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", language: "Docker" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", language: "PostgreSQL" },
-  { icon: "/javascript.svg", language: "JavaScript" },
-  { icon: "/reactjs.svg", language: "React" },
-  { icon: "/tailwind.svg", language: "Tailwind" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", language: "MySQL" },
+  { icon: "/sql.svg", language: "SQL" },
 ];
 
 export default function FullWidthTabs() {
@@ -456,7 +540,7 @@ export default function FullWidthTabs() {
     {
       key: "grad",
       title: "Grad Project",
-      description: "Capstone and final-year work bridging AI, VR, and real-world impact.",
+      description: "Capstone and final-year work bridging AI, VR, and real-world impact. Ranked first place among 80+ ITCS projects.",
       icon: "🎓",
       accent: "from-amber-500 to-orange-500",
       glow: "rgba(251,191,36,0.15)",
