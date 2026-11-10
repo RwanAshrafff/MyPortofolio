@@ -177,7 +177,7 @@ const Home = () => {
                 <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl leading-relaxed font-light"
                   data-aos="fade-up"
                   data-aos-delay="800">
-                  Backend-Focused Full Stack Developer and AI Engineer passionate about AI-driven solutions and web development. Junior Teaching Assistant helping peers and turning research into practical products.
+                  Backend-Focused Full Stack Developer and AI Engineer, passionate about AI-driven solutions and web development, and an ECPC finalist.
                 </p>
 
                 {/* Typing Effect */}

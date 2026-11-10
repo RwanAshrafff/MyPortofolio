@@ -118,15 +118,10 @@ const AboutPage = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
 
-    const startDate = new Date("2022-09-01");
-    const today = new Date();
-    const experience = today.getFullYear() - startDate.getFullYear() -
-      (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
-
     return {
       totalProjects: storedProjects.length || 4,
       totalCertificates: storedCertificates.length || 8,
-      YearExperience: Math.max(experience, 0)
+      YearExperience: "0-1"
     };
   }, []);
 
@@ -214,7 +209,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-             Information Technology and Computer Science student at Nile University (Giza, Sheikh Zayed) with a 3.90 GPA, three Dean's Honors, and a rank 1 graduation project result among more than 80 ITCS projects. I focus on backend-oriented AI and web development—ranging from telecom projects to mentoring peers in .NET and Python. I enjoy turning research into reliable tools that people can use every day.
+             Information Technology and Computer Science student at Nile University (Giza, Sheikh Zayed) with a 3.90 GPA, three Dean's Honors, and a rank 1 graduation project result among more than 80 ITCS projects. I work on voice agents, AI bots, and full-stack web development projects, solving real-world challenges by turning ideas into practical and reliable tools.
             </p>
 
                {/* Quote Section */}

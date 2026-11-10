@@ -425,10 +425,19 @@ const projectsData = [
 
 const experienceData = [
   {
+    id: "ghabour-auto-ai-engineer",
+    Position: "AI Engineer Trainee",
+    Company: "Ghabbour (GB Corp)",
+    Duration: "October 2026 - Present",
+    Description: "Working on voice agents and AI bots to support practical business solutions.",
+    Skills: ["Voice Agents", "AI Bots", "Conversational AI"],
+    Img: "/exp-ghabour-auto.png"
+  },
+  {
     id: "etisalat-internship",
-    Position: "Data Engineer Internship",
+    Position: "AI Engineer Internship",
     Company: "E& (Etisalat)",
-    Duration: "August 2025",
+    Duration: "August 2025 - September 2025",
     Description: "Worked as a data engineer focusing on data cleaning, processing, and extracting valuable insights from telecommunications data.",
     Skills: ["Data Engineering", "Data Cleaning", "Data Analysis", "Insights Generation", "Problem Solving"],
     Img: "/exp-etisalat.png"
@@ -463,6 +472,7 @@ const experienceData = [
 ];
 
 const certificatesData = [
+  { id: "packt-neo4j", Img: "/cert-packt-neo4j.png" },
   { id: "microsoft-fullstack", Img: "/cert-microsoft-fullstack.jpg" },
   { id: "sprints-microsoft-summer", Img: "/cert-sprints-microsoft-summer.jpg" },
   { id: "etisalat-internship", Img: "/cert-etisalat-internship.jpg" },
@@ -479,9 +489,7 @@ const certificatesData = [
 
 const techStacks = [
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original-wordmark.svg", language: ".NET" },
-  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg", language: "Django" },
-  { icon: "/reactjs.svg", language: "React" },
-  { icon: "/tailwind.svg", language: "Tailwind" },
+  { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", language: "Spring Boot" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg", language: "C#" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", language: "C++" },
   { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", language: "Python" },
@@ -586,7 +594,7 @@ export default function FullWidthTabs() {
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          AI and data-focused work from Nile University, internships, and mentoring—plus the certifications that shaped my path.
+          I developed my AI and web development skills through hands-on projects, internships, and courses.
         </p>
       </div>
 
